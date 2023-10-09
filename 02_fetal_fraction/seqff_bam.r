@@ -21,6 +21,8 @@
 #####
 ##### seqff_bam.r (bam version) 2023/08/29
 #####
+##### add bam processing
+#####
 ##### Dongin Kim, senior researcher
 ##### Bioinformatics / Molecular diagnosis
 ##### EONE Laboratories, Incheon , KOREA, KR
