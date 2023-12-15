@@ -158,3 +158,32 @@ Calculation coverage based on detected K-mer count in mapping read per chromosom
             shell> python kmer_counter_strand.py
                    usage: kmer_counter_strand.py [-h] bam kmer(25,50,70...)
                    kmer_counter_strand.py: error: the following arguments are required: bam, kmer   
+
+0.3) Calculation coverage based on detected K-mer in mapping read per chromosomes
+
+            shell> usage: python  kmer_coverage.py
+                   usage: usage: kmer_coverage.py [-h] bam kmer
+                   kmer_coverage.py: error: the following arguments are required: bam, kmer
+
+0.4) Calculation coverage based on detected K-mer in mapping read per chromosomes (strand specific )
+
+            shell> python python kmer_coverage_strand.py
+                   usage: kmer_coverage_strand.py [-h] bam kmer
+                   kmer_coverage_strand.py: error: the following arguments are required: bam, kmer
+
+0.5) Calculation coverage by median based on detected K-mer in mapping read per chromosomes
+
+            shell> python kmer_coverage_med_bam.py
+                   usage: kmer_coverage_med_bam.py [-h] bam kmer
+                   kmer_coverage_med_bam.py: error: the following arguments are required: bam, kmer
+
+
+statistics algorithms (score1)
+
+         
+
+
+statistics algorithms2 (score2)
+
+          
+                   
