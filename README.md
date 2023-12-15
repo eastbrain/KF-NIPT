@@ -54,6 +54,7 @@ Installation
            shell> conda install -c bioconda deeptools
     
 
+
 NGS processing
 
 0.0) automated mode
@@ -109,6 +110,8 @@ NGS processing
                    06_gc_correction.py: error: the following arguments are required: bam        
 
 
+
+
 Calculate fetal fraction
 
 0.1) python mode
@@ -119,4 +122,39 @@ Calculate fetal fraction
 
 0.2) R mode
 
-            shell> Rscript seqff_bam.r input.bam output.txt             
+            shell> Rscript seqff_bam.r input.bam output.txt     
+
+
+
+
+Calculation coverage based on mapping read count per chromosomes
+
+0.1) for mapping reads per chromosomes
+
+             shell> python read_counter_bam.py
+                    usage: read_counter_bam.py [-h] bam
+                    read_counter_bam.py: error: the following arguments are required: bam
+
+0.2) for mapping reads coverage by median per chromosomes
+
+            shell> python read_coverage_med_bam.py
+                   usage: read_coverage_med_bam.py [-h] bam
+                   read_coverage_med_bam.py: error: the following arguments are required: bam                   
+
+
+
+
+
+Calculation coverage based on detected K-mer count in mapping read per chromosomes
+
+0.1) count detected K-mer in mapping read per chromosomes
+
+            shell> python read_counter_bam.py
+                   usage: kmer_counter.py [-h] bam kmer(25,50,70...)
+                   kmer_counter.py: error: the following arguments are required: bam, kmer
+
+0.2) count detected count in mapping read per chromosomes (strand specific )
+
+            shell> python kmer_counter_strand.py
+                   usage: kmer_counter_strand.py [-h] bam kmer(25,50,70...)
+                   kmer_counter_strand.py: error: the following arguments are required: bam, kmer   
