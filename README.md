@@ -12,7 +12,7 @@ Installation
 
 01) setting environment for operating
 
-         Linux Environment
+    Linux Environment
     
             shell> wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
             shell> bash Anaconda3-2023.09-0-Linux-x86_64.sh
@@ -21,7 +21,7 @@ Installation
             shell> conda config --add channels bioconda
             shell> conda config --add channels conda-forge
 
-         Python Environment
+    Python Environment
     
             shell> conda install python==3.7.6
             shell> pip install astropy==4.0
@@ -36,7 +36,7 @@ Installation
             shell> pip install scipy==1.4.1 
             shell> pip install seaborn==0.10.0
                  
-         R Environment
+     R Environment
 
             Linnx shell> conda install R=3.5.1
             R shell> conda install R=3.5.1
@@ -44,7 +44,7 @@ Installation
                install.packages("BiocManager")
             R> BiocManager::install("Rsamtools")
 
-         Bioinformatics Tools For NGS processing
+    Bioinformatics Tools For NGS processing
 
            shell> conda install -c bioconda fastqc
            shell> conda install -c bioconda sickle
@@ -55,6 +55,25 @@ Installation
     
 
 NGS processing
+
+0.0) automated mode
+   
+           shell> python 00_wgs_processing.py fastq -h
+                  ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/f5ffb473-7fd4-4fd7-a661-d8bc272ff283)
+
+                 usage: 00_wgs_processing.py [-h] fastq
+
+                 NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
+
+                 positional arguments:
+  fastq       fastq, fastq.gz
+
+optional arguments:
+  -h, --help  show this help message and exit
+    
+0.1) fastq QC
+
+            shell> python 01_fastqc_processing.py fastq
 
 01) fastq QC
 
