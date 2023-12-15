@@ -5,4 +5,4 @@ NGS processing
 
 01) fastq QC
 
-  shell> python 01_fastqc_processing.py fastq
+            shell> python 01_fastqc_processing.py fastq
