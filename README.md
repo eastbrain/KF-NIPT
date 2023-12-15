@@ -59,22 +59,64 @@ NGS processing
 0.0) automated mode
    
            shell> python 00_wgs_processing.py fastq -h
-                  ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/f5ffb473-7fd4-4fd7-a661-d8bc272ff283)
 
                  usage: 00_wgs_processing.py [-h] fastq
 
                  NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
 
                  positional arguments:
-  fastq       fastq, fastq.gz
+                   fastq       fastq, fastq.gz
 
-optional arguments:
-  -h, --help  show this help message and exit
+                 optional arguments:
+                    -h, --help  show this help message and exit
     
 0.1) fastq QC
 
             shell> python 01_fastqc_processing.py fastq
+                   usage: 01_fastqc_processing.py [-h] fastq
+                   01_fastqc_processing.py: error: the following arguments are required: fastq
 
-01) fastq QC
+0.2) quality trim
 
-            shell> python 01_fastqc_processing.py fastq
+            shell> python 02_sickle_quality_trim.py
+                   usage: 02_sickle_quality_trim.py [-h] fastq
+                   02_sickle_quality_trim.py: error: the following arguments are required: fastq
+
+0.3) genome alignment mapping
+
+            shell> python 03_bwa_genome_mapping.py
+                   usage:  03_bwa_genome_mapping.py [-h] trimmed.fastq
+                   03_bwa_genome_mapping.py: error: the following arguments are required: trimmed.fastq   
+
+0.4) 1 - convert samtools to bam 
+     2 - sort bam
+     3 - mapping quality filter
+
+            shell> python 04_samtools_sort_filter.py
+                   usage: 04_samtools_sort_filter.py [-h] sam
+                   04_samtools_sort_filter.py: error: the following arguments are required: sam
+
+0.5) remove duplication
+
+            shell> python 05_picard_remove_duplicates.py
+                   usage: 05_picard_remove_duplicates.py [-h] bam
+                   05_picard_remove_duplicates.py: error: the following arguments are required: bam 
+
+0.6) gc correction
+
+            shell> python 06_gc_correction.py
+                   06_gc_correction.py [-h] bam
+                   06_gc_correction.py: error: the following arguments are required: bam        
+
+
+Calculate fetal fraction
+
+0.1) python mode
+
+            shell> python 07_fetal_fraction.py
+                   usage: 07_fetal_fraction.py [-h] bam
+                   07_fetal_fraction.py: error: the following arguments are required: bam  
+
+0.2) R mode
+
+            shell> Rscript seqff_bam.r input.bam output.txt             
