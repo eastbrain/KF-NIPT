@@ -119,7 +119,8 @@ main <- function() {
     stop("#################################################
         usage: Rscript seqff_bam.r input.bam output.txt\n\n
 
-                                      EONE Laboratories
+                                        Ajou University
+                                        EONE Laboratories
 
 	                                     Dongin Kim
 
