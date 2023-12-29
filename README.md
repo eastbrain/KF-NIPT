@@ -178,12 +178,18 @@ Calculation coverage based on detected K-mer count in mapping read per chromosom
                    kmer_coverage_med_bam.py: error: the following arguments are required: bam, kmer
 
 
-statistics algorithms (score1)
+0.6) Calculation KF-score based on detected K-mer in mapping read per chromosomes with fetal fraction
 
-         
+            shell> python Calculate_KF_score_matrix.py
+                   usage: Calculate_KF_score_matrix.py [-h]  K-mer_directory fetal-fraction_directory matrix.out.txt 
+                   Calculate_KF_score_matrix.py: error: the following arguments are required: kmer_dir, ff_dir, output         
 
 
-statistics algorithms2 (score2)
+0.7) Detection chromosomal abnormalities
+
+            shell> python detection_chromosome_abnormalities.py
+                   usage:detection_chromosome_abnormalities.py [-h]  matrix.out.txt  chr21(1~22)
+                   detection_chromosome_abnormalities.py: error: the following arguments are required: matrix, chr   
 
           
                    
