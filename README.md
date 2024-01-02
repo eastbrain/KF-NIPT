@@ -182,7 +182,7 @@ Calculation coverage based on detected K-mer count in mapping read per chromosom
 
             shell> python calculate_kf_score_matrix.py
                    usage: calculate_kf_score_matrix.py [-h]  K-mer_directory fetal-fraction_directory matrix.out.txt 
-                   Calculate_KF_score_matrix.py: error: the following arguments are required: kmer_dir, ff_dir, output         
+                   Calculate_kf_score_matrix.py: error: the following arguments are required: kmer_dir, ff_dir, output         
 
 
 0.7) Detection chromosomal abnormalities
