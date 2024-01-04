@@ -35,6 +35,7 @@ Installation
             shell> pip install pytest-astropy-header==0.1.2
             shell> pip install scipy==1.4.1 
             shell> pip install seaborn==0.10.0
+            shell> sudo apt-get install python3-pil.imagetk
                  
      R Environment
 
@@ -191,9 +192,9 @@ Calculation KF-score (K-mer and fetal fraction-based estimation) of chromosomal 
 
 0.2) Detection chromosomal abnormalities
 
-            shell> python detection_chromosome_abnormalities.py
-                   usage:detection_chromosome_abnormalities.py [-h]  matrix.out.txt  chr21(1~22)
-                   detection_chromosome_abnormalities.py: error: the following arguments are required: matrix, chr   
+            shell> python detection_chromosome_abnormalities_T21.py
+                   usage:detection_chromosome_abnormalities_T21.py [-h]  matrix.out.txt
+                   detection_chromosome_abnormalities_T21.py: error: the following arguments are required: matrix
 
           
                    
