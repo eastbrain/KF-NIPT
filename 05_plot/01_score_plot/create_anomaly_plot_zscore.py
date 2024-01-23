@@ -34,21 +34,10 @@ def plot_anomaly(df, threshold, title='z-score'):
     plt.ylabel('z-score')
     plt.xticks([])
     plt.show()
-
 #####################################################################################################
 def draw_chart(mat_file):
-   year = list(range(1950,2019,4))
-   players = list(map(chr,range(97,97+len(year))))
-   goals = [8,11,13,4,9,10,7,6,6,6,6,6,6,8,5,5,6,6]
-   assert len(year) == len(players) == len(goals)
-   wc_goals = pd.DataFrame(list(zip(year,players,goals)), columns=['Year','Player','Goals'])
-   wc_goals['Zscore'] = ss.zscore(wc_goals['Goals'])
-
    df = pd.read_csv(mat_file, sep = "\t").set_index('chr').loc['chr21 ']
-
    plot_anomaly(df,3) 
-
-
 #####################################################################################################
 def main():
   warnings.filterwarnings('ignore')
