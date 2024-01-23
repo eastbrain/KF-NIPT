@@ -3,10 +3,12 @@
 # original reference
 # Kim, S. K., et al. (2015). "Determination of fetal DNA fraction from the plasma of pregnant women using sequence read counts." Prenat Diagn 35(8): 810-815.
 
-- Download address
-   https://github.com/eastbrain/KF-NIPT/tree/main/02_fetal_fraction
+- Original source code download address
+   https://obgyn.onlinelibrary.wiley.com/doi/10.1002/pd.4615
 
-- Download link
-   https://github.com/eastbrain/KF-NIPT/blob/main/02_fetal_fraction/seqff_bam.r
-   https://github.com/eastbrain/KF-NIPT/blob/main/02_fetal_fraction/SupplementalFile1.RData
-   https://github.com/eastbrain/KF-NIPT/blob/main/02_fetal_fraction/SupplementalTable2.csv
+- Supporting Information
+   pd4615-sup-0002-SeqFF.R
+   pd4615-sup-0008-File1.RData
+   pd4615-sup-0009-Table1.csv
+   pd4615-sup-0010-Table2.csv
+
