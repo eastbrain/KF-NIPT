@@ -3,6 +3,14 @@
 # original reference
 # Kim, S. K., et al. (2015). "Determination of fetal DNA fraction from the plasma of pregnant women using sequence read counts." Prenat Diagn 35(8): 810-815.
 
+- How to run
+  linux shell> Rscript  seqff_bam.r  input.bam  output.SeqFF.txt
+  linux shell> more output.SeqFF.txt
+  SeqFF   0.0806893964136204
+  Enet    0.0666714144569365
+  WRSC    0.0947073783703044
+  linux shell>
+
 - Original source code download address
    https://obgyn.onlinelibrary.wiley.com/doi/10.1002/pd.4615
 
