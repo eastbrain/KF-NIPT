@@ -1,5 +1,5 @@
 # KF-NIPT
-### KF-NIPT: K-mer and fetal fraction-based estimation of chromosomal anomaly from NIPT data 
+#### KF-NIPT: K-mer and fetal fraction-based estimation of chromosomal anomaly from NIPT data 
 
 #### System requirements
 
