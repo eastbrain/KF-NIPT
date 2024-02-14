@@ -1,16 +1,16 @@
 # KF-NIPT
-A more accurate analysis tool utilized WGS data of cfDNA
+### KF-NIPT: K-mer and fetal fraction-based estimation of chromosomal anomaly from NIPT data 
 
-System requirements
+#### System requirements
 
             OS: Ubuntu 22.04.1
             Linux kernel: 5.15.0-76-generic
             python: version 3.7.6
             R: version 3.5.1
             
-Installation
+#### Installation
 
-01) setting environment for operating
+#### 01) setting environment for operating
 
     Linux Environment
     
@@ -56,9 +56,9 @@ Installation
     
 
 
-NGS processing
+#### NGS processing
 
-0.0) automated mode
+#### 0.0) automated mode
    
            shell> python 00_wgs_processing.py fastq -h
 
@@ -72,19 +72,19 @@ NGS processing
                  optional arguments:
                     -h, --help  show this help message and exit
     
-0.1) fastq QC
+#### 0.1) fastq QC
 
             shell> python 01_fastqc_processing.py fastq
                    usage: 01_fastqc_processing.py [-h] fastq
                    01_fastqc_processing.py: error: the following arguments are required: fastq
 
-0.2) quality trim
+#### 0.2) quality trim
 
             shell> python 02_sickle_quality_trim.py
                    usage: 02_sickle_quality_trim.py [-h] fastq
                    02_sickle_quality_trim.py: error: the following arguments are required: fastq
 
-0.3) genome alignment mapping
+#### 0.3) genome alignment mapping
 
             shell> python 03_bwa_genome_mapping.py
                    usage:  03_bwa_genome_mapping.py [-h] trimmed.fastq
@@ -98,13 +98,13 @@ NGS processing
                    usage: 04_samtools_sort_filter.py [-h] sam
                    04_samtools_sort_filter.py: error: the following arguments are required: sam
 
-0.5) remove duplication
+#### 0.5) remove duplication
 
             shell> python 05_picard_remove_duplicates.py
                    usage: 05_picard_remove_duplicates.py [-h] bam
                    05_picard_remove_duplicates.py: error: the following arguments are required: bam 
 
-0.6) gc correction
+#### 0.6) gc correction
 
             shell> python 06_gc_correction.py
                    06_gc_correction.py [-h] bam
@@ -113,30 +113,30 @@ NGS processing
 
 
 
-Calculate fetal fraction
+#### Calculate fetal fraction
 
-0.1) python mode
+#### 0.1) python mode
 
             shell> python 07_fetal_fraction.py
                    usage: 07_fetal_fraction.py [-h] bam
                    07_fetal_fraction.py: error: the following arguments are required: bam  
 
-0.2) R mode
+#### 0.2) R mode
 
             shell> Rscript seqff_bam.r input.bam output.txt     
 
 
 
 
-Calculation coverage based on mapping read count per chromosomes
+#### Calculation coverage based on mapping read count per chromosomes
 
-0.1) for mapping reads per chromosomes
+#### 0.1) for mapping reads per chromosomes
 
              shell> python read_counter_bam.py
                     usage: read_counter_bam.py [-h] bam
                     read_counter_bam.py: error: the following arguments are required: bam
 
-0.2) for mapping reads coverage by median per chromosomes
+#### 0.2) for mapping reads coverage by median per chromosomes
 
             shell> python read_coverage_med_bam.py
                    usage: read_coverage_med_bam.py [-h] bam
@@ -146,33 +146,33 @@ Calculation coverage based on mapping read count per chromosomes
 
 
 
-Calculation coverage based on detected K-mer count in mapping read per chromosomes
+#### Calculation coverage based on detected K-mer count in mapping read per chromosomes
 
-0.1) count detected K-mer in mapping read per chromosomes
+#### 0.1) count detected K-mer in mapping read per chromosomes
 
             shell> python read_counter_bam.py
                    usage: kmer_counter.py [-h] bam kmer(25,50,70...)
                    kmer_counter.py: error: the following arguments are required: bam, kmer
 
-0.2) count detected count in mapping read per chromosomes (strand specific )
+#### 0.2) count detected count in mapping read per chromosomes (strand specific )
 
             shell> python kmer_counter_strand.py
                    usage: kmer_counter_strand.py [-h] bam kmer(25,50,70...)
                    kmer_counter_strand.py: error: the following arguments are required: bam, kmer   
 
-0.3) Calculation coverage based on detected K-mer in mapping read per chromosomes
+#### 0.3) Calculation coverage based on detected K-mer in mapping read per chromosomes
 
             shell> usage: python  kmer_coverage.py
                    usage: usage: kmer_coverage.py [-h] bam kmer
                    kmer_coverage.py: error: the following arguments are required: bam, kmer
 
-0.4) Calculation coverage based on detected K-mer in mapping read per chromosomes (strand specific )
+#### 0.4) Calculation coverage based on detected K-mer in mapping read per chromosomes (strand specific )
 
             shell> python python kmer_coverage_strand.py
                    usage: kmer_coverage_strand.py [-h] bam kmer
                    kmer_coverage_strand.py: error: the following arguments are required: bam, kmer
 
-0.5) Calculation coverage by median based on detected K-mer in mapping read per chromosomes
+#### 0.5) Calculation coverage by median based on detected K-mer in mapping read per chromosomes
 
             shell> python kmer_coverage_med_bam.py
                    usage: kmer_coverage_med_bam.py [-h] bam kmer
@@ -181,16 +181,16 @@ Calculation coverage based on detected K-mer count in mapping read per chromosom
 
 
 
-Calculation KF-score (K-mer and fetal fraction-based estimation) of chromosomal anomaly from NIPT data 
+#### Calculation KF-score (K-mer and fetal fraction-based estimation) of chromosomal anomaly from NIPT data 
 
-0.1) Calculation KF-score based on detected K-mer in mapping read per chromosomes with fetal fraction
+#### 0.1) Calculation KF-score based on detected K-mer in mapping read per chromosomes with fetal fraction
 
             shell> python calculate_kf_score_matrix.py
                    usage: calculate_kf_score_matrix.py [-h]  K-mer_directory fetal-fraction_directory matrix.out.txt 
                    Calculate_kf_score_matrix.py: error: the following arguments are required: kmer_dir, ff_dir, output         
 
 
-0.2) Detection chromosomal abnormalities
+#### 0.2) Detection chromosomal abnormalities
 
             shell> python detection_chromosome_abnormalities_T21.py
                    usage:detection_chromosome_abnormalities_T21.py [-h]  matrix.out.txt
