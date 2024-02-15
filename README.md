@@ -8,6 +8,19 @@
 
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/40bb70b7-d88a-45d7-9e9e-3288a323b572)
 
+#### Demo
+
+The directories containing fetal fraction analysis results and the calculated KCV (Normalized K-mer Count Value), along with the relevant analysis python code, are available at the following address. You can use these to perform the analysis on the demo data as shown in the figure below.
+
+https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T21
+![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/386e7a0f-5f3e-42ec-9704-158e2c501497)
+
+https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T18
+![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/24a6e0cd-0bce-43d4-b6f0-0a1986188779)
+
+https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
+![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/e4d200d2-bb38-4764-924c-815187af0ed3)
+
 
 #### System requirements
 
