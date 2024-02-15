@@ -6,7 +6,8 @@
 
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/eb0632bf-139a-4542-9f12-445504da1ded)
 
-![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/9f7414c0-aec3-4f13-9f7f-ca52d3f9014b)
+![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/51fc6991-35e2-474c-9b1a-1f5226806bc0)
+
 
 #### System requirements
 
