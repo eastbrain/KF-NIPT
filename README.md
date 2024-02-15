@@ -10,7 +10,7 @@
 
 #### Demo
 
-The directories containing fetal fraction analysis results and the calculated KCV (Normalized K-mer Count Value), along with the relevant analysis python code, are available at the following address. You can use these to perform the analysis on the demo data as shown in the figure below.
+The directories containing fetal fraction analysis results and the calculated KF-SCORE (K-mer and Fetal fraction-based Score), along with the relevant analysis python code, are available at the following address. You can use these to perform the analysis on the demo data as shown in the figure below.
 
 https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T21
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/386e7a0f-5f3e-42ec-9704-158e2c501497)
