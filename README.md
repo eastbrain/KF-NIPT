@@ -1,5 +1,5 @@
-# KF-NIPT
-### KF-NIPT: K-mer and fetal fraction-based estimation of chromosomal anomaly from NIPT data 
+## KF-NIPT
+#### KF-NIPT: K-mer and fetal fraction-based estimation of chromosomal anomaly from NIPT data 
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/90a73a89-a3b5-4141-96dc-804b3ab08099)
 
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/ce591dcd-1f5b-4631-9ddc-f13181f1043d)
