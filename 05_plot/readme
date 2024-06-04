@@ -1,1 +1,4 @@
 
+  shell> python detection_chromosome_abnormalities_T21.py
+               usage:detection_chromosome_abnormalities_T21.py [-h]  matrix.out.txt
+               detection_chromosome_abnormalities_T21.py: error: the following arguments are required: matrix
