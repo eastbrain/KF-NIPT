@@ -1,0 +1,11 @@
+Package: seqffBAM
+Type: Package
+Title: seqff BAM version 
+Version: 0.1.0
+Author: Dongin Kim <gtphrase@eonelab.co.kr>, <sckacker@ajou.ac.kr>, <gtphrase@naver.com>
+Maintainer:  Dongin Kim <gtphrase@eonelab.co.kr>, <sckacker@ajou.ac.kr>, <gtphrase@naver.com>
+Depends: R (>= 4.1.2)
+Description: We create seqff BAM version.
+License: GPL-3
+LazyData: FALSE
+Suggests: Rsamtools (>= 2.10.0)
