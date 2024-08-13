@@ -13,8 +13,8 @@ from collections import defaultdict
 #####################################################################################################
 def run_gccorrect(args):
   bam = args.bam
-  computeGCBias = "../bin/deepTools/3.5.2/computeGCBias"
-  correctGCBias = "../bin/deepTools/3.5.2/correctGCBias"
+  computeGCBias = "~/anaconda3/bin/computeGCBias"
+  correctGCBias = "~/anaconda3/bin/correctGCBias"
   cmd1 = computeGCBias + " -p 100 -l 101 -b " + bam  + " --effectiveGenomeSize 2864785220 -g ./ref/hg19.2bit --GCbiasFrequenciesFile " + bam + ".freq.txt"
   cmd2 = correctGCBias + " -p 100 -b " + bam + " --effectiveGenomeSize 2864785220 -g ./ref/hg19.2bit --GCbiasFrequenciesFile " + bam + ".freq.txt" + " -o " + bam + ".gc_corrected.bam"
   os.system(cmd1)
