@@ -17,9 +17,9 @@ def run_bwa(args):
   sam = args.sample + ".bwa.out.sam"
   cmd = ""
   if args.fastq_R2 is not None:
-    cmd = bwa + " mem -t 1 -R " + "\"@RG\\tID:"+args.sample+"\\tSM:"+args.sample+"\\tPL:ILLUMINA\"" + " " + args.db + " " + args.fastq_R1 + " " + args.fastq_R2 + " > " + sam
+    cmd = bwa + " mem -t 8 -R " + "\"@RG\\tID:"+args.sample+"\\tSM:"+args.sample+"\\tPL:ILLUMINA\"" + " " + args.db + " " + args.fastq_R1 + " " + args.fastq_R2 + " > " + sam
   else:
-    cmd = bwa + " mem -t 1 -R " + "\"@RG\\tID:"+args.sample+"\\tSM:"+args.sample+"\\tPL:ILLUMINA\"" + " " + args.db + " " + args.fastq_R1 + " > " + sam
+    cmd = bwa + " mem -t 8 -R " + "\"@RG\\tID:"+args.sample+"\\tSM:"+args.sample+"\\tPL:ILLUMINA\"" + " " + args.db + " " + args.fastq_R1 + " > " + sam
   os.system(cmd)
 ######################################################################################################
 def main():
