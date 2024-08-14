@@ -58,8 +58,36 @@ def run_main(args):
     os.system(cmd)
 
   else:#single-end
-    cmd =  args.fastq_R1
-  print(cmd)
+    #cmd =  args.fastq_R1
+    #fastq QC
+    cmd = fastqc + " -r1 " + args.fastq_R1 
+    os.system(cmd)
+
+    #fastq Quality fiter, Length filter
+    cmd = sickle + " -r1 " + args.fastq_R1
+    os.system(cmd)
+
+    #genome alignment
+    #sampleid = args.fastq_R1.split("_")[0]
+    cmd = bwa + " -r1 " + args.fastq_R1 + "_1_trimmed.fastq" + "_1_repair.fq.gz"
+    os.system(cmd)
+
+    #convert sam to bam, filter bam, sort bam
+    cmd = samtools + " -sam " + sampleid + ".bwa.out.sam"
+    os.system(cmd)
+
+    #remove duplication
+    cmd = picard + " -bam " + sampleid + ".bwa.out.sam" + ".F4.q20.sorted.bam "
+    os.system(cmd)
+
+    #gc correction
+    cmd = deeptools + " -bam " + sampleid + ".bwa.out.sam" + ".F4.q20.sorted.bam" + ".rmdup.bam"
+    os.system(cmd)
+
+    #fetal fraction
+    cmd = seqff_bam + " -bam " + sampleid + ".bwa.out.sam" + ".F4.q20.sorted.bam" + ".rmdup.bam" + ".gc_corrected.bam"
+    os.system(cmd)
+
   #os.system(cmd)
 #####################################################################################################
 def main():
