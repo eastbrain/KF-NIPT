@@ -69,7 +69,7 @@ def run_main(args):
 
     #genome alignment
     #sampleid = args.fastq_R1.split("_")[0]
-    cmd = bwa + " -r1 " + args.fastq_R1 + "_1_trimmed.fastq" + "_1_repair.fq.gz" + " -index ../ref/ucsc.hg19.fasta -sample " + sampleid 
+    cmd = bwa + " -r1 " + args.fastq_R1 + "_1_trimmed.fastq" + " -index ../ref/ucsc.hg19.fasta -sample " + sampleid 
     os.system(cmd)
 
     #convert sam to bam, filter bam, sort bam
