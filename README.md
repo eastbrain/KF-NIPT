@@ -8,6 +8,8 @@
 
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/40bb70b7-d88a-45d7-9e9e-3288a323b572)
 
+![image](https://github.com/user-attachments/assets/09f60517-d9b3-4fb2-ba92-d9789d15773f)
+
 ## Demo
 
 #  01) demo1 - single-end fastq
