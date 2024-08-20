@@ -59,7 +59,9 @@ https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
             R: version 3.5.1
             
 #### Installation
+ [![Watch the video](https://i9.ytimg.com/vi/QuazCDewlxI/sddefault.jpg?sqp=COTokLYG-oaymwEmCIAFEOAD8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGEgYShhMA8=&rs=AOn4CLA4d-EXPCGHikRXaquWr14ygnB7TQ)](https://www.youtube.com/watch?v=QuazCDewlxI) 
 
+ 
 #### 01) setting environment for operating
 
     Linux Environment
