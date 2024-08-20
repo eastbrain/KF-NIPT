@@ -8,7 +8,34 @@
 
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/40bb70b7-d88a-45d7-9e9e-3288a323b572)
 
-#### Demo
+## Demo
+
+#  01) demo1 - single-end fastq
+     
+       shell> cd 00_demo/
+       shell> ln -s ../ref .
+       shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
+       shell> cp -rf ../04_statistics/kmer_coverage_med_bam.py ./
+       shell> ln -s raw/demo_S1_R1_001.fastq.gz .
+       shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz
+       shell> python  kmer_coverage_med_bam.py demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam
+       shell> mkdir ff kmer
+       shell> cp -rf  demo.k25.txt  kmer/
+       shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
+      
+# 02) demo2 - paired-end fastq
+    
+       shell> cd 00_demo/
+       shell> ln -s ../ref .
+       shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
+       shell> cp -rf ../04_statistics/kmer_coverage_med_bam.py ./
+       shell> ln -s raw/demo_S1_R1_001.fastq.gz .
+       shell> ln -s raw/demo_S1_R2_001.fastq.gz .
+       shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz -r2 demo_S1_R2_001.fastq.gz
+       shell> mkdir ff kmer
+       shell> cp -rf  demo.k25.txt  kmer/
+       shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
+
 
 The directories containing fetal fraction analysis results and the calculated KF-SCORE (K-mer and Fetal fraction-based Score), along with the relevant analysis python code, are available at the following address. You can use these to perform the analysis on the demo data as shown in the figure below.
 
@@ -96,34 +123,6 @@ https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
 
 
 #### NGS processing
-
-## Demo Analysis
-
-#  01) demo1 - single-end fastq
-     
-       shell> cd 00_demo/
-       shell> ln -s ../ref .
-       shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
-       shell> cp -rf ../04_statistics/kmer_coverage_med_bam.py ./
-       shell> ln -s raw/demo_S1_R1_001.fastq.gz .
-       shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz
-       shell> python  kmer_coverage_med_bam.py demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam
-       shell> mkdir ff kmer
-       shell> cp -rf  demo.k25.txt  kmer/
-       shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
-      
-# 02) demo2 - paired-end fastq
-    
-       shell> cd 00_demo/
-       shell> ln -s ../ref .
-       shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
-       shell> cp -rf ../04_statistics/kmer_coverage_med_bam.py ./
-       shell> ln -s raw/demo_S1_R1_001.fastq.gz .
-       shell> ln -s raw/demo_S1_R2_001.fastq.gz .
-       shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz -r2 demo_S1_R2_001.fastq.gz
-       shell> mkdir ff kmer
-       shell> cp -rf  demo.k25.txt  kmer/
-       shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
 
 #### 0.0) automated mode
    
