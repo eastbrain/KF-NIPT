@@ -35,49 +35,90 @@ https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
 
     Linux Environment
     
-            shell> wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
-            shell> bash Anaconda3-2023.09-0-Linux-x86_64.sh
-            shell> conda update conda
-            shell> conda config --add channels defaults
-            shell> conda config --add channels bioconda
-            shell> conda config --add channels conda-forge
+        shell> wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+        shell> bash Anaconda3-2020.02-Linux-x86_64.sh
+        shell> bash
+        shell> conda config --add channels defaults
+        shell> conda config --add channels bioconda
+        shell> conda config --add channels conda-forge
+        shell> pip install pysam==0.15.3
+        shell> pip install py2bit==0.3.0
+        shell> pip install deeptoolsintervals==0.1.9
+        shell> pip install matplotlib==3.3.0
+        shell> pip install plotly==4.9
+        shell> pip install retrying==1.3.4
+        shell> pip install pyBigWig==0.2.1
+        shell> pip install khmer==2.1.1
 
-    Python Environment
+        shell> wget https://github.com/deeptools/deepTools/archive/refs/tags/3.5.2.tar.gz
+        shell> tar xvf 3.5.2.tar.gz
+        shell> cd deepTools-3.5.2/
+        shell> python setup.py build
+        shell> python setup.py install
+        shell> correctGCBias --version 
+        shell> computeGCBias --version
     
-            shell> conda install python==3.7.6
-            shell> pip install astropy==4.0
-            shell> pip install biopython==1.81
-            shell> pip install glob2==0.7
-            shell> pip install khmer==2.1.1
-            shell> pip install numpy==1.21.6
-            shell> pip install pandas==1.0.1
-            shell> pip install pysam==0.21.0
-            shell> pip install pytest-astropy==0.8.0
-            shell> pip install pytest-astropy-header==0.1.2
-            shell> pip install scipy==1.4.1 
-            shell> pip install seaborn==0.10.0
-            shell> sudo apt-get install python3-pil.imagetk
+        shell> git clone https://github.com/eastbrain/KF-NIPT.git       
+        shell> chmod 755 02_ngs_process/*.py
+        shell> chmod 755 bin/FastQC/v0.12.1/bin/fastqc
+        shell> cd KF-NIPT/bin/BBMap/39.06/bbmap
+        shell> tar xvf BBMap_39.06.tar.gz
+        shell> mv bbmap/* ./
+        shell> chmod 755 *.sh
+        shell> cd ../../../../
+
+        shell> cd bin/java/openjdk-18.0.2
+        shell> wget https://download.java.net/java/GA/jdk18.0.2/f6ad4b4450fd4d298113270ec84f30ee/9/GPL/openjdk-18.0.2_linux-x64_bin.tar.gz
+       
+        shell> tar xvf openjdk-18.0.2_linux-x64_bin.tar.gz
+        shell> mv jdk-18.0.2/* ./
+        shell> ./bin/java 
+        shell> cd ../../../
+        shell> chmod 755 bin/samtools/1.17/bin/samtools
+        shell> bin/samtools/1.17/bin/samtools
+        shell> chmod 755 bin/sickle/v1.33/bin/sickle
+        shell> bin/sickle/v1.33/bin/sickle
+
+        shell> chmod 755 bin/bwa/0.7.17/bin/bwa
+        shell> cd ref
+        shell> wget https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit
+        shell> wget https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/hg19.fa.gz
+        shell> ../bin/bwa/0.7.17/bin/bwa index hg19.fa.gz
                  
      R Environment
 
-            Linnx shell> conda install R=3.5.1
-            R shell> conda install R=3.5.1
-            R shell> if (!require("BiocManager", quietly = TRUE))
-               install.packages("BiocManager")
-            R> BiocManager::install("Rsamtools")
+        Linnx shell> conda install R=3.5.1
+        R shell> conda install R=3.5.1
+        R shell> if (!require("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+        R> BiocManager::install("Rsamtools")
 
-    Bioinformatics Tools For NGS processing
-
-           shell> conda install -c bioconda fastqc
-           shell> conda install -c bioconda sickle
-           shell> conda install -c bioconda bwa
-           shell> conda install -c bioconda samtools
-           shell> conda install -c bioconda picard
-           shell> conda install -c bioconda deeptools
-    
 
 
 #### NGS processing
+
+##Demo Analysis
+
+  01) demo1 - single-end fastq
+       shell> cd 00_demo/
+       shell> ln -s ../ref .
+       shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
+       shell> cp -rf ../04_statistics/kmer_coverage_med_bam.py ./
+       shell> ln -s raw/demo_S1_R1_001.fastq.gz .
+       shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz
+       shell> python  kmer_coverage_med_bam.py demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam
+       shell> mkdir ff kmer
+       shell>
+      
+ 3) demo2 - paired-end fastq
+       shell> cd 00_demo/
+       shell> ln -s ../ref .
+       shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
+       shell> cp -rf ../04_statistics/kmer_coverage_med_bam.py ./
+       shell> ln -s raw/demo_S1_R1_001.fastq.gz .
+       shell> ln -s raw/demo_S1_R2_001.fastq.gz .
+       shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz -r2 demo_S1_R2_001.fastq.gz
+
 
 #### 0.0) automated mode
    
