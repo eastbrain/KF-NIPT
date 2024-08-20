@@ -97,9 +97,10 @@ https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
 
 #### NGS processing
 
-##Demo Analysis
+## Demo Analysis
 
-  01) demo1 - single-end fastq
+#  01) demo1 - single-end fastq
+     
        shell> cd 00_demo/
        shell> ln -s ../ref .
        shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
@@ -108,9 +109,11 @@ https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
        shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz
        shell> python  kmer_coverage_med_bam.py demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam
        shell> mkdir ff kmer
-       shell>
+       shell> cp -rf  demo.k25.txt  kmer/
+       shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
       
- 3) demo2 - paired-end fastq
+# 02) demo2 - paired-end fastq
+    
        shell> cd 00_demo/
        shell> ln -s ../ref .
        shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
@@ -118,7 +121,9 @@ https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
        shell> ln -s raw/demo_S1_R1_001.fastq.gz .
        shell> ln -s raw/demo_S1_R2_001.fastq.gz .
        shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz -r2 demo_S1_R2_001.fastq.gz
-
+       shell> mkdir ff kmer
+       shell> cp -rf  demo.k25.txt  kmer/
+       shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
 
 #### 0.0) automated mode
    
@@ -152,9 +157,9 @@ https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
                    usage:  03_bwa_genome_mapping.py [-h] trimmed.fastq
                    03_bwa_genome_mapping.py: error: the following arguments are required: trimmed.fastq   
 
-0.4) 1 - convert samtools to bam 
-     2 - sort bam
-     3 - mapping quality filter
+#### 0.4) 1 - convert samtools to bam 
+          2 - sort bam
+          3 - mapping quality filter
 
             shell> python 04_samtools_sort_filter.py
                    usage: 04_samtools_sort_filter.py [-h] sam
