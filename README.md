@@ -8,11 +8,11 @@
 
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/40bb70b7-d88a-45d7-9e9e-3288a323b572)
 
-![image](https://github.com/user-attachments/assets/09f60517-d9b3-4fb2-ba92-d9789d15773f)
+![image](https://github.com/user-attachments/assets/7638b197-2d2d-408b-bca0-c74a73b335af)
 
-## Demo
+# Demo
 
-#  01) demo1 - single-end fastq
+##  01) demo1 - single-end fastq
      
        shell> cd 00_demo/
        shell> ln -s ../ref .
@@ -25,7 +25,7 @@
        shell> cp -rf  demo.k25.txt  kmer/
        shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
       
-# 02) demo2 - paired-end fastq
+## 02) demo2 - paired-end fastq
     
        shell> cd 00_demo/
        shell> ln -s ../ref .
