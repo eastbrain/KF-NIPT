@@ -135,64 +135,141 @@ https://github.com/user-attachments/assets/eebf4fdd-6e09-4ef7-84b8-fd0e18e996bd
    
            shell> python 00_wgs_processing.py fastq -h
 
-                 usage: 00_wgs_processing.py [-h] fastq
+                usage: 00_wgs_processing.py [-h] [-v] -r1 FASTQ_R1 [-r2 FASTQ_R2]
 
-                 NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
+                NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
 
-                 positional arguments:
-                   fastq       fastq, fastq.gz
+                required arguments:
+                  -r1 FASTQ_R1   sample_R1.fastq(.gz)
 
-                 optional arguments:
-                    -h, --help  show this help message and exit
+                optional arguments:
+                  -h, --help     show this help message and exit
+                  -v, --version  show program's version number and exit
+                  -r2 FASTQ_R2   sample_R2.fastq(.gz)
     
 #### 0.1) fastq QC
 
-            shell> python 01_fastqc_processing.py fastq
-                   usage: 01_fastqc_processing.py [-h] fastq
-                   01_fastqc_processing.py: error: the following arguments are required: fastq
+            shell> python 01_fastqc_processing.py -h
+                   usage: 01_fastqc_processing.py [-h] [-v] -r1 FASTQ_R1 [-r2 FASTQ_R2]
+
+                   NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
+
+                   required arguments:
+                     -r1 FASTQ_R1   sample_R1.fastq(.gz)
+
+                   optional arguments:
+                     -h, --help     show this help message and exit
+                     -v, --version  show program's version number and exit
+                     -r2 FASTQ_R2   sample_R2.fastq(.gz)
 
 #### 0.2) quality trim
 
-            shell> python 02_sickle_quality_trim.py
-                   usage: 02_sickle_quality_trim.py [-h] fastq
-                   02_sickle_quality_trim.py: error: the following arguments are required: fastq
+            shell> python 02_sickle_quality_trim.py -h
+                   usage: 02_sickle_quality_trim.py [-h] [-v] -r1 FASTQ_R1 [-r2 FASTQ_R2]
 
-#### 0.3) genome alignment mapping
+                   NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
 
-            shell> python 03_bwa_genome_mapping.py
-                   usage:  03_bwa_genome_mapping.py [-h] trimmed.fastq
-                   03_bwa_genome_mapping.py: error: the following arguments are required: trimmed.fastq   
+                   required arguments:
+                     -r1 FASTQ_R1   sample_R1.fastq(.gz)
 
-#### 0.4) 1 - convert samtools to bam 
+                   optional arguments:
+                     -h, --help     show this help message and exit
+                     -v, --version  show program's version number and exit
+                     -r2 FASTQ_R2   sample_R2.fastq(.gz)
+
+#### 0.3) Repair fastq (paired-end)                    
+
+            shell> python 03_repair_fastq.py  -h
+                   usage: 03_repair_fastq.py [-h] [-v] -r1 FASTQ_R1 -r2 FASTQ_R2
+
+                   NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
+
+                   required arguments:
+                     -r1 FASTQ_R1   sample_R1.fastq(.gz)
+                     -r2 FASTQ_R2   sample_R2.fastq(.gz)
+
+                   optional arguments:
+                     -h, --help     show this help message and exit
+                     -v, --version  show program's version number and exit
+
+#### 0.4) genome alignment mapping
+
+            shell> python 03_bwa_genome_mapping.py -h 
+                  usage: 04_bwa_genome_mapping.py [-h] [-v] -r1 FASTQ_R1 [-r2 FASTQ_R2] -index
+                                DB -sample SAMPLE
+
+                  NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
+
+                  required arguments:
+                    -r1 FASTQ_R1    sample_R1.fastq(.gz)
+                    -index DB       bwa index db(human genome)
+                    -sample SAMPLE  sample name
+
+                  optional arguments:
+                    -h, --help      show this help message and exit
+                    -v, --version   show program's version number and exit
+                    -r2 FASTQ_R2    sample_R2.fastq(.gz)
+
+#### 0.5) 1 - convert samtools to bam 
           2 - sort bam
           3 - mapping quality filter
 
-            shell> python 04_samtools_sort_filter.py
-                   usage: 04_samtools_sort_filter.py [-h] sam
-                   04_samtools_sort_filter.py: error: the following arguments are required: sam
+            shell> python 04_samtools_sort_filter.py -h
+                   usage: 05_samtools_sort_filter.py [-h] [-v] -sam SAM
 
-#### 0.5) remove duplication
+                   NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
 
-            shell> python 05_picard_remove_duplicates.py
-                   usage: 05_picard_remove_duplicates.py [-h] bam
-                   05_picard_remove_duplicates.py: error: the following arguments are required: bam 
+                   required arguments:
+                     -sam SAM       sam
 
-#### 0.6) gc correction
+                   optional arguments:
+                     -h, --help     show this help message and exit
+                     -v, --version  show program's version number and exit
 
-            shell> python 06_gc_correction.py
-                   06_gc_correction.py [-h] bam
-                   06_gc_correction.py: error: the following arguments are required: bam        
+#### 0.6) remove duplication
 
+            shell> python 06_picard_remove_duplicates.py  -h
+                   usage: 06_picard_remove_duplicates.py [-h] [-v] -bam BAM
 
+                   NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
+
+                   required arguments:
+                     -bam BAM       bam
+
+                   optional arguments:
+                     -h, --help     show this help message and exit
+                     -v, --version  show program's version number and exit
+
+#### 0.7) gc correction
+
+            shell>python 07_gc_correction.py -h
+                  usage: 07_gc_correction.py [-h] [-v] -bam BAM
+
+                  NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
+
+                  required arguments:
+                    -bam BAM       bam
+
+                  optional arguments:
+                    -h, --help     show this help message and exit
+                    -v, --version  show program's version number and exit      
 
 
 #### Calculate fetal fraction
 
 #### 0.1) python mode
 
-            shell> python 07_fetal_fraction.py
-                   usage: 07_fetal_fraction.py [-h] bam
-                   07_fetal_fraction.py: error: the following arguments are required: bam  
+            shell> python 08_fetal_fraction.py  -h
+              usage: 08_fetal_fraction.py [-h] [-v] -bam BAM
+
+              NIPT Welcoming version (sckacker@ajou.ac.kr,gtphrase@eonelab.co.kr)
+
+              required arguments:
+                -bam BAM       bam
+
+              optional arguments:
+                -h, --help     show this help message and exit
+                -v, --version  show program's version number and exit
 
 #### 0.2) R mode
 
