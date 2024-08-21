@@ -94,6 +94,7 @@ https://github.com/user-attachments/assets/23205b6d-9bdf-4f3a-9dd4-156361e24b5b
         shell> python setup.py install
         shell> correctGCBias --version 
         shell> computeGCBias --version
+        shell> cd ../
     
         shell> git clone https://github.com/eastbrain/KF-NIPT.git       
         shell> chmod 755 KF-NIPT/02_ngs_process/*.py
