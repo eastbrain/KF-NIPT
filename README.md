@@ -96,8 +96,8 @@ https://github.com/user-attachments/assets/23205b6d-9bdf-4f3a-9dd4-156361e24b5b
         shell> computeGCBias --version
     
         shell> git clone https://github.com/eastbrain/KF-NIPT.git       
-        shell> chmod 755 02_ngs_process/*.py
-        shell> chmod 755 bin/FastQC/v0.12.1/bin/fastqc
+        shell> chmod 755 KF-NIPT/02_ngs_process/*.py
+        shell> chmod 755 KF-NIPT/bin/FastQC/v0.12.1/bin/fastqc
         shell> cd KF-NIPT/bin/BBMap/39.06/bbmap
         shell> tar xvf BBMap_39.06.tar.gz
         shell> mv bbmap/* ./
