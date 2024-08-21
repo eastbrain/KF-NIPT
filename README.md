@@ -11,7 +11,22 @@
 
 # Demo
 
-##  01) demo1 - single-end fastq
+## 01) demo1 - paired-end fastq
+https://github.com/user-attachments/assets/5b57a879-c0c4-4abc-80c9-c74c43b37dd6
+     
+       shell> cd 00_demo/
+       shell> ln -s ../ref .
+       shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
+       shell> cp -rf ../04_statistics/kmer_coverage_med_bam.py ./
+       shell> ln -s raw/demo_S1_R1_001.fastq.gz .
+       shell> ln -s raw/demo_S1_R2_001.fastq.gz .
+       shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz -r2 demo_S1_R2_001.fastq.gz
+       shell> mkdir ff kmer
+       shell> cp -rf  demo.k25.txt  kmer/
+       shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
+
+
+##  02) demo2 - single-end fastq
 https://github.com/user-attachments/assets/f4f09428-1db7-475e-898a-acd0575dfccc
 
        shell> cd 00_demo/
@@ -25,19 +40,6 @@ https://github.com/user-attachments/assets/f4f09428-1db7-475e-898a-acd0575dfccc
        shell> cp -rf  demo.k25.txt  kmer/
        shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
       
-## 02) demo2 - paired-end fastq
-https://github.com/user-attachments/assets/5b57a879-c0c4-4abc-80c9-c74c43b37dd6
-     
-       shell> cd 00_demo/
-       shell> ln -s ../ref .
-       shell> cp -rf ../02_ngs_process/00_wgs_processing.py  ./
-       shell> cp -rf ../04_statistics/kmer_coverage_med_bam.py ./
-       shell> ln -s raw/demo_S1_R1_001.fastq.gz .
-       shell> ln -s raw/demo_S1_R2_001.fastq.gz .
-       shell> ./00_wgs_processing.py  -r1 demo_S1_R1_001.fastq.gz -r2 demo_S1_R2_001.fastq.gz
-       shell> mkdir ff kmer
-       shell> cp -rf  demo.k25.txt  kmer/
-       shell> cp -rf  demo.bwa.out.sam.F4.q20.sorted.bam.rmdup.bam.gc_corrected.bam.ff.out.txt  ff/
 
 
 The directories containing fetal fraction analysis results and the calculated KF-SCORE (K-mer and Fetal fraction-based Score), along with the relevant analysis python code, are available at the following address. You can use these to perform the analysis on the demo data as shown in the figure below.
