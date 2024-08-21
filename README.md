@@ -61,12 +61,8 @@ https://github.com/eastbrain/KF-NIPT/tree/main/00_demo/T13
             
 #### Installation
 
-#### install 1
-https://github.com/user-attachments/assets/7e04d807-066a-43d8-b815-f65de3cda67a
-#### install 2
-https://github.com/user-attachments/assets/8129765d-a4fc-4ade-a131-534cedc0fe8d
-#### install 3
-https://github.com/user-attachments/assets/23205b6d-9bdf-4f3a-9dd4-156361e24b5b
+#### install
+https://github.com/user-attachments/assets/eebf4fdd-6e09-4ef7-84b8-fd0e18e996bd
  
 #### 01) setting environment for operating
 
