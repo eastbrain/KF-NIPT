@@ -125,11 +125,11 @@ https://github.com/user-attachments/assets/23205b6d-9bdf-4f3a-9dd4-156361e24b5b
                  
      R Environment
 
-        Linnx shell> conda install R=3.5.1
-        R shell> conda install R=3.5.1
+        shell> R
         R shell> if (!require("BiocManager", quietly = TRUE))
-        install.packages("BiocManager")
-        R> BiocManager::install("Rsamtools")
+                 install.packages("BiocManager")
+        R shell> BiocManager::install("Rsamtools")
+        R shell> library("Rsamtools")
 
 
 
