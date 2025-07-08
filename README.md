@@ -1,5 +1,10 @@
 ## KF-NIPT
 #### KF-NIPT: K-mer and fetal fraction-based estimation of chromosomal anomaly from NIPT data 
+
+Published in BMC Bioinformatics on May 22, 2025.
+
+https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-025-06127-y
+
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/90a73a89-a3b5-4141-96dc-804b3ab08099)
 
 ![image](https://github.com/eastbrain/KF-NIPT/assets/140467225/ce591dcd-1f5b-4631-9ddc-f13181f1043d)
